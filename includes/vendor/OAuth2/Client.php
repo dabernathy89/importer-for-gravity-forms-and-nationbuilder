@@ -22,7 +22,7 @@
  *
  * @author      Pierrick Charron <pierrick@webstart.fr>
  * @author      Anis Berejeb <anis.berejeb@gmail.com>
- * @version     0.2.0
+ * @version     0.1.0
  */
 namespace OAuth2;
 
