@@ -176,94 +176,14 @@ class GF_NB_Importer {
 	}
 
 	/**
-	 * Activate the plugin
-	 *
-	 * @since  0.1.0
-	 * @return void
-	 */
-	public function _activate() {
-		// Make sure any rewrite functionality has been loaded.
-		flush_rewrite_rules();
-	}
-
-	/**
-	 * Deactivate the plugin
-	 * Uninstall routines should be in uninstall.php
-	 *
-	 * @since  0.1.0
-	 * @return void
-	 */
-	public function _deactivate() {}
-
-	/**
 	 * Init hooks
 	 *
 	 * @since  0.1.0
 	 * @return void
 	 */
 	public function init() {
-		if ( $this->check_requirements() ) {
-			load_plugin_textdomain( 'gf-nb-importer', false, dirname( $this->basename ) . '/languages/' );
-			$this->plugin_classes();
-		}
-	}
-
-	/**
-	 * Check if the plugin meets requirements and
-	 * disable it if they are not present.
-	 *
-	 * @since  0.1.0
-	 * @return boolean result of meets_requirements
-	 */
-	public function check_requirements() {
-		if ( ! $this->meets_requirements() ) {
-
-			// Add a dashboard notice.
-			add_action( 'all_admin_notices', array( $this, 'requirements_not_met_notice' ) );
-
-			// Deactivate our plugin.
-			add_action( 'admin_init', array( $this, 'deactivate_me' ) );
-
-			return false;
-		}
-
-		return true;
-	}
-
-	/**
-	 * Deactivates this plugin, hook this function on admin_init.
-	 *
-	 * @since  0.1.0
-	 * @return void
-	 */
-	public function deactivate_me() {
-		deactivate_plugins( $this->basename );
-	}
-
-	/**
-	 * Check that all plugin requirements are met
-	 *
-	 * @since  0.1.0
-	 * @return boolean True if requirements are met.
-	 */
-	public static function meets_requirements() {
-		// Do checks for required classes / functions
-		// function_exists('') & class_exists('').
-		// We have met all requirements.
-		return true;
-	}
-
-	/**
-	 * Adds a notice to the dashboard if the plugin requirements are not met
-	 *
-	 * @since  0.1.0
-	 * @return void
-	 */
-	public function requirements_not_met_notice() {
-		// Output our error.
-		echo '<div id="message" class="error">';
-		echo '<p>' . sprintf( __( 'Importer for Gravity Forms and NationBuilder is missing requirements and has been <a href="%s">deactivated</a>. Please make sure all requirements are available.', 'gf-nb-importer' ), admin_url( 'plugins.php' ) ) . '</p>';
-		echo '</div>';
+		load_plugin_textdomain( 'gf-nb-importer', false, dirname( $this->basename ) . '/languages/' );
+		$this->plugin_classes();
 	}
 
 	/**
@@ -344,6 +264,3 @@ function gf_nb_importer() {
 
 // Kick it off.
 add_action( 'plugins_loaded', array( gf_nb_importer(), 'hooks' ), 5 );
-
-register_activation_hook( __FILE__, array( gf_nb_importer(), '_activate' ) );
-register_deactivation_hook( __FILE__, array( gf_nb_importer(), '_deactivate' ) );
