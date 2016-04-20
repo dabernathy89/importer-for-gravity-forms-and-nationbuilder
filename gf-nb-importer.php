@@ -3,7 +3,7 @@
  * Plugin Name: Importer for Gravity Forms and NationBuilder
  * Plugin URI:  https://www.danielabernathy.com
  * Description: Automatically import entries from Gravity Forms into NationBuilder.
- * Version:     0.0.0
+ * Version:     0.1.0
  * Author:      dabernathy89
  * Author URI:  https://www.danielabernathy.com
  * Donate link: https://www.danielabernathy.com
@@ -41,7 +41,7 @@ require('includes/vendor/OAuth2/GrantType/AuthorizationCode.php');
 /**
  * Autoloads files with classes when needed
  *
- * @since  NEXT
+ * @since  0.1.0
  * @param  string $class_name Name of the class being requested.
  * @return void
  */
@@ -63,7 +63,7 @@ spl_autoload_register( 'gf_nb_importer_autoload_classes' );
 /**
  * Main initiation class
  *
- * @since  NEXT
+ * @since  0.1.0
  * @var  string $version  Plugin version
  * @var  string $basename Plugin basename
  * @var  string $url      Plugin URL
@@ -75,15 +75,15 @@ class GF_NB_Importer {
 	 * Current version
 	 *
 	 * @var  string
-	 * @since  NEXT
+	 * @since  0.1.0
 	 */
-	const VERSION = '0.0.0';
+	const VERSION = '0.1.0';
 
 	/**
 	 * URL of plugin directory
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.1.0
 	 */
 	protected $url = '';
 
@@ -91,7 +91,7 @@ class GF_NB_Importer {
 	 * Path of plugin directory
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.1.0
 	 */
 	protected $path = '';
 
@@ -99,7 +99,7 @@ class GF_NB_Importer {
 	 * Plugin basename
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.1.0
 	 */
 	protected $basename = '';
 
@@ -107,7 +107,7 @@ class GF_NB_Importer {
 	 * Plugin slug
 	 *
 	 * @var string
-	 * @since NEXT
+	 * @since 0.1.0
 	 */
 	protected $slug = 'gf_nb_importer';
 
@@ -115,14 +115,14 @@ class GF_NB_Importer {
 	 * Singleton instance of plugin
 	 *
 	 * @var GF_NB_Importer
-	 * @since  NEXT
+	 * @since  0.1.0
 	 */
 	protected static $single_instance = null;
 
 	/**
 	 * Instance of GFNBI_Gravity_Forms_Feed
 	 *
-	 * @since NEXT
+	 * @since 0.1.0
 	 * @var GFNBI_Gravity_Forms_Feed
 	 */
 	protected $gravity_forms_feed;
@@ -130,7 +130,7 @@ class GF_NB_Importer {
 	/**
 	 * Creates or returns an instance of this class.
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return GF_NB_Importer A single instance of this class.
 	 */
 	public static function get_instance() {
@@ -144,7 +144,7 @@ class GF_NB_Importer {
 	/**
 	 * Sets up our plugin
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 */
 	protected function __construct() {
 		$this->basename = plugin_basename( __FILE__ );
@@ -155,7 +155,7 @@ class GF_NB_Importer {
 	/**
 	 * Attach other plugin classes to the base plugin class.
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return void
 	 */
 	public function plugin_classes() {
@@ -168,7 +168,7 @@ class GF_NB_Importer {
 	/**
 	 * Add hooks and filters
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return void
 	 */
 	public function hooks() {
@@ -178,7 +178,7 @@ class GF_NB_Importer {
 	/**
 	 * Activate the plugin
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return void
 	 */
 	public function _activate() {
@@ -190,7 +190,7 @@ class GF_NB_Importer {
 	 * Deactivate the plugin
 	 * Uninstall routines should be in uninstall.php
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return void
 	 */
 	public function _deactivate() {}
@@ -198,7 +198,7 @@ class GF_NB_Importer {
 	/**
 	 * Init hooks
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return void
 	 */
 	public function init() {
@@ -212,7 +212,7 @@ class GF_NB_Importer {
 	 * Check if the plugin meets requirements and
 	 * disable it if they are not present.
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return boolean result of meets_requirements
 	 */
 	public function check_requirements() {
@@ -233,7 +233,7 @@ class GF_NB_Importer {
 	/**
 	 * Deactivates this plugin, hook this function on admin_init.
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return void
 	 */
 	public function deactivate_me() {
@@ -243,7 +243,7 @@ class GF_NB_Importer {
 	/**
 	 * Check that all plugin requirements are met
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return boolean True if requirements are met.
 	 */
 	public static function meets_requirements() {
@@ -256,7 +256,7 @@ class GF_NB_Importer {
 	/**
 	 * Adds a notice to the dashboard if the plugin requirements are not met
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @return void
 	 */
 	public function requirements_not_met_notice() {
@@ -269,7 +269,7 @@ class GF_NB_Importer {
 	/**
 	 * Magic getter for our object.
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @param string $field Field to get.
 	 * @throws Exception Throws an exception if the field is invalid.
 	 * @return mixed
@@ -292,7 +292,7 @@ class GF_NB_Importer {
 	/**
 	 * Include a file from the includes directory
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @param  string $filename Name of the file to be included.
 	 * @return bool   Result of include call.
 	 */
@@ -307,7 +307,7 @@ class GF_NB_Importer {
 	/**
 	 * This plugin's directory
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @param  string $path (optional) appended path.
 	 * @return string       Directory and path
 	 */
@@ -320,7 +320,7 @@ class GF_NB_Importer {
 	/**
 	 * This plugin's url
 	 *
-	 * @since  NEXT
+	 * @since  0.1.0
 	 * @param  string $path (optional) appended path.
 	 * @return string       URL and path
 	 */
@@ -335,7 +335,7 @@ class GF_NB_Importer {
  * Grab the GF_NB_Importer object and return it.
  * Wrapper for GF_NB_Importer::get_instance()
  *
- * @since  NEXT
+ * @since  0.1.0
  * @return GF_NB_Importer  Singleton instance of plugin class.
  */
 function gf_nb_importer() {

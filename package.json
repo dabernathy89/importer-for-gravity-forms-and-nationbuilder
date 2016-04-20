@@ -1,25 +1,25 @@
 {
-	"name": "gf-nb-importer",
-	"title": "Importer for Gravity Forms and NationBuilder",
-	"version": "0.0.0",
-	"description": "Automatically import entries from Gravity Forms into NationBuilder.",
-	"author": {
-		"name": "dabernathy89",
-		"url": "https://www.danielabernathy.com"
-	},
-	"license": "GPLv2",
-	"devDependencies": {
-		"grunt": "latest",
-		"grunt-contrib-watch": "latest",
-		"grunt-wp-i18n": "latest",
-		"grunt-contrib-copy": "latest",
-		"grunt-text-replace": "latest",
-		"grunt-contrib-clean": "latest",
-		"grunt-contrib-compress": "latest",
-		"grunt-wp-deploy": "latest",
-		"load-grunt-tasks": "latest"
-	},
-	"scripts": {
-		"version": "grunt version && git add ."
-	}
+  "name": "gf-nb-importer",
+  "title": "Importer for Gravity Forms and NationBuilder",
+  "version": "0.1.0",
+  "description": "Automatically import entries from Gravity Forms into NationBuilder.",
+  "author": {
+    "name": "dabernathy89",
+    "url": "https://www.danielabernathy.com"
+  },
+  "license": "GPLv2",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-wp-i18n": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-text-replace": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-compress": "latest",
+    "grunt-wp-deploy": "latest",
+    "load-grunt-tasks": "latest"
+  },
+  "scripts": {
+    "version": "grunt version && git add ."
+  }
 }
