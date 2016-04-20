@@ -153,9 +153,18 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
                     'success'
                 );
             } else {
+                $note = __( 'There was an error pushing this entry to NationBuilder.', 'gf-nb-importer' );
+                $body = json_decode( $response['body'], true );
+
+                if ( $body ) {
+                    $note .= PHP_EOL;
+                    $note .= isset( $body['code'] ) ? __( 'Error code: ', 'gf-nb-importer' ) . $body['code'] . PHP_EOL : '';
+                    $note .= isset( $body['message'] ) ? __( 'Error message: ', 'gf-nb-importer' ) . $body['message'] : '';
+                }
+
                 $this->add_note(
                     $entry['id'],
-                    __( 'NationBuilder did not return a successful response when pushing this entry.', 'gf-nb-importer'),
+                    $note,
                     'error'
                 );
             }
