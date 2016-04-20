@@ -1,0 +1,17 @@
+{
+  "generator-plugin-wp": {
+    "name": "Importer for Gravity Forms and NationBuilder",
+    "homepage": "https://www.danielabernathy.com",
+    "description": "Automatically import entries from Gravity Forms into NationBuilder.",
+    "version": "0.0.0",
+    "author": "dabernathy89",
+    "authoremail": "daniel@danielabernathy.com",
+    "authorurl": "https://www.danielabernathy.com",
+    "license": "GPLv2",
+    "slug": "gf-nb-importer",
+    "classname": "GF_NB_Importer",
+    "classprefix": "GFNBI_",
+    "prefix": "gf_nb_importer",
+    "year": 2016
+  }
+}
