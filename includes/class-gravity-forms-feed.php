@@ -9,6 +9,7 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
 
     protected $plugin;
     protected $main;
+    protected $nb_api;
     protected $_version;
     protected $_min_gravityforms_version = '1.9.16';
     protected $_slug;
@@ -19,11 +20,12 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
 
     private static $_instance = null;
 
-    public function __construct( $plugin, $main ) {
+    public function __construct( $plugin, $main, $nb_api ) {
         parent::__construct();
 
         $this->plugin = $plugin;
         $this->main = $main;
+        $this->nb_api = $nb_api;
         $this->_version = $this->plugin->version;
         $this->_slug = $this->plugin->slug . '_feeds';
         $this->_path = plugin_basename( __FILE__ );
@@ -49,14 +51,8 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
      * @return bool|void
      */
     public function process_feed( $feed, $entry, $form ) {
-        $access_token = $this->main->get_plugin_setting( 'oauth_access_token' );
-        $nation_slug = $this->main->get_plugin_setting( 'nation_slug' );
         $nb_fields_raw = $this->get_dynamic_field_map_fields( $feed, 'nb_person_fields' );
         $nb_fields_formatted = array();
-
-        if ( ! $access_token || ! $nation_slug ) {
-            return;
-        }
 
         // Loop through the custom fields and format them into a nested array that we'll send to NB.
         foreach ($nb_fields_raw as $key => $value) {
@@ -79,54 +75,26 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
             return;
         }
 
-        $response = wp_remote_request(
-            "https://{$nation_slug}.nationbuilder.com/api/v1/people/push",
-            array(
-                'method' => 'PUT',
-                'headers' => array(
-                    'Authorization' => 'Bearer ' . $access_token,
-                    'Content-Type' => 'application/json',
-                    'Accept' => 'application/json',
-                ),
-                'body' => json_encode( array('person' => $nb_fields_formatted) )
-            )
-        );
+        $response = $this->nb_api->push_person( array('person' => $nb_fields_formatted) );
 
         if ( ! is_wp_error( $response ) ) {
             if ( wp_remote_retrieve_response_code( $response ) === 200 ) {
-                $this->add_note(
-                    $entry['id'],
-                    __( 'Successfully updated this entry in NationBuilder.', 'gf-nb-importer'),
-                    'success'
-                );
+                $note = __( 'Successfully updated this entry in NationBuilder.', 'gf-nb-importer');
             } elseif ( wp_remote_retrieve_response_code( $response ) === 201 ) {
-                $this->add_note(
-                    $entry['id'],
-                    __( 'Successfully created this entry in NationBuilder.', 'gf-nb-importer'),
-                    'success'
-                );
-            } else {
-                $note = __( 'There was an error pushing this entry to NationBuilder.', 'gf-nb-importer' );
-                $body = json_decode( $response['body'], true );
-
-                if ( $body ) {
-                    $note .= PHP_EOL;
-                    $note .= isset( $body['code'] ) ? __( 'Error code: ', 'gf-nb-importer' ) . $body['code'] . PHP_EOL : '';
-                    $note .= isset( $body['message'] ) ? __( 'Error message: ', 'gf-nb-importer' ) . $body['message'] : '';
-                }
-
-                $this->add_note(
-                    $entry['id'],
-                    $note,
-                    'error'
-                );
+                $note = __( 'Successfully created this entry in NationBuilder.', 'gf-nb-importer');
             }
+
+            $this->add_note( $entry['id'], $note, 'success' );
         } elseif ( is_wp_error( $response ) ) {
-            $this->add_note(
-                $entry['id'],
-                __( 'There was an error pushing this entry to NationBuilder: ', 'gf-nb-importer') . $response->get_error_message(),
-                'error'
-            );
+            $error_code = $response->get_error_code();
+            $error_message = $response->get_error_message( $error_code );
+
+            $note = __( 'There was an error pushing this entry to NationBuilder: ', 'gf-nb-importer' );
+            $note .= PHP_EOL;
+            $note .= __( 'Error code: ', 'gf-nb-importer' ) . $error_code . PHP_EOL;
+            $note .= __( 'Error message: ', 'gf-nb-importer' ) . $error_message;
+
+            $this->add_note( $entry['id'], $note, 'error' );
         }
     }
 

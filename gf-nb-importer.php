@@ -136,6 +136,14 @@ class GF_NB_Importer {
 	protected $gravity_forms_main;
 
 	/**
+	 * Instance of GFNBI_Nb_Api
+	 *
+	 * @since NEXT
+	 * @var GFNBI_Nb_Api
+	 */
+	protected $nb_api;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since  0.1.0
@@ -171,7 +179,8 @@ class GF_NB_Importer {
 		GFForms::include_feed_addon_framework();
 
 		$this->gravity_forms_main = new GFNBI_Gravity_Forms_Main( $this );
-		$this->gravity_forms_feed = new GFNBI_Gravity_Forms_Feed( $this, $this->gravity_forms_main );
+		$this->nb_api = new GFNBI_Nb_Api( $this, $this->gravity_forms_main );
+		$this->gravity_forms_feed = new GFNBI_Gravity_Forms_Feed( $this, $this->gravity_forms_main, $this->nb_api );
 
 		GFAddOn::register( 'GFNBI_Gravity_Forms_Main' );
 		GFAddOn::register( 'GFNBI_Gravity_Forms_Feed' );
@@ -216,6 +225,7 @@ class GF_NB_Importer {
 			case 'path':
 			case 'gravity_forms_feed':
 			case 'gravity_forms_main':
+			case 'nb_api':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid '. __CLASS__ .' property: ' . $field );
