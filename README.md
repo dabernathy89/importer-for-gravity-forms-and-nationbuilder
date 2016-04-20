@@ -27,10 +27,5 @@ Automatically import entries from Gravity Forms into NationBuilder.
 
 ## Changelog ##
 
-### 0.0.0 ###
-* First release
-
-## Upgrade Notice ##
-
-### 0.0.0 ###
-First Release
+### 0.1.0 ###
+* Initial release.
