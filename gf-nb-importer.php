@@ -3,7 +3,7 @@
  * Plugin Name: Importer for Gravity Forms and NationBuilder
  * Plugin URI:  https://www.danielabernathy.com
  * Description: Automatically import entries from Gravity Forms into NationBuilder.
- * Version:     0.1.0
+ * Version:     0.2.0
  * Author:      dabernathy89
  * Author URI:  https://www.danielabernathy.com
  * Donate link: https://www.danielabernathy.com
@@ -77,7 +77,7 @@ class GF_NB_Importer {
 	 * @var  string
 	 * @since  0.1.0
 	 */
-	const VERSION = '0.1.0';
+	const VERSION = '0.2.0';
 
 	/**
 	 * URL of plugin directory
@@ -130,7 +130,7 @@ class GF_NB_Importer {
 	/**
 	 * Instance of GFNBI_Gravity_Forms_Main
 	 *
-	 * @since NEXT
+	 * @since 0.2.0
 	 * @var GFNBI_Gravity_Forms_Main
 	 */
 	protected $gravity_forms_main;
@@ -138,7 +138,7 @@ class GF_NB_Importer {
 	/**
 	 * Instance of GFNBI_Nb_Api
 	 *
-	 * @since NEXT
+	 * @since 0.2.0
 	 * @var GFNBI_Nb_Api
 	 */
 	protected $nb_api;

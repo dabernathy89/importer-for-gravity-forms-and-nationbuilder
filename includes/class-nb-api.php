@@ -1,7 +1,7 @@
 <?php
 /**
  * Importer for Gravity Forms and NationBuilder Nb Api
- * @version 0.1.0
+ * @version 0.2.0
  * @package Importer for Gravity Forms and NationBuilder
  */
 
@@ -10,7 +10,7 @@ class GFNBI_Nb_Api {
 	 * Parent plugin class
 	 *
 	 * @var   class
-	 * @since NEXT
+	 * @since 0.2.0
 	 */
 	protected $plugin = null;
 
@@ -18,14 +18,14 @@ class GFNBI_Nb_Api {
 	 * Main Gravity Forms add-on class
 	 *
 	 * @var   class
-	 * @since NEXT
+	 * @since 0.2.0
 	 */
 	protected $gf_main = null;
 
 	/**
 	 * Constructor
 	 *
-	 * @since  NEXT
+	 * @since  0.2.0
 	 * @param  object $plugin Main plugin object.
 	 * @return void
 	 */
@@ -41,7 +41,7 @@ class GFNBI_Nb_Api {
 	/**
 	 * Make a request to NationBuilder and return
 	 *
-	 * @since  NEXT
+	 * @since  0.2.0
 	 * @param  object $plugin Main plugin object.
 	 * @return void
 	 */
