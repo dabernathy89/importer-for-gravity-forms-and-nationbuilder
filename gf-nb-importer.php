@@ -34,7 +34,7 @@
  * Built using generator-plugin-wp
  */
 
-require('includes/vendor/OAuth2/client.php');
+require('includes/vendor/OAuth2/Client.php');
 require('includes/vendor/OAuth2/GrantType/IGrantType.php');
 require('includes/vendor/OAuth2/GrantType/AuthorizationCode.php');
 
