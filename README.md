@@ -51,6 +51,12 @@ This plugin was built using the generator-plugin-wp tool built by WebDevStudios.
 
 ## Changelog ##
 
+### 0.2.2 ###
+* Bug fix - fatal error when Gravity Forms is not installed
+
+### 0.2.1 ###
+* Bug fix - fatal error caused by require() statement with lower case class name
+
 ### 0.2.0 ###
 * Reorganize plugin structure, update readme.
 
