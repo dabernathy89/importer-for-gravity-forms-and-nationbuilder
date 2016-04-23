@@ -48,6 +48,11 @@ This plugin was built using the generator-plugin-wp tool built by WebDevStudios.
 
 ## Screenshots ##
 
+1. The main plugin settings screen
+
+2. The overview of NationBuilder feeds for a form
+
+3. Editing an individual feed for a form
 
 ## Changelog ##
 
