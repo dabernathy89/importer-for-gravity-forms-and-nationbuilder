@@ -166,16 +166,6 @@ module.exports = function( grunt ) {
             }
         },
 
-        wp_deploy: {
-            dist: {
-                options: {
-                    plugin_slug: '<%= pkg.name %>',
-                    build_dir: 'release/svn/',
-                    assets_dir: 'assets/repo/'
-                }
-            }
-        },
-
         clean: {
             release: [
                 'release/<%= pkg.version %>/',
@@ -191,7 +181,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'default', ['styles', 'scripts', 'php'] );
 
 	grunt.registerTask( 'version', [ 'default', 'replace:version_php', 'replace:version_readme' ] );
-	grunt.registerTask( 'release', [ 'clean:release', 'replace:readme_txt', 'copy', 'compress', 'wp_deploy' ] );
+	grunt.registerTask( 'release', [ 'clean:release', 'replace:readme_txt', 'copy', 'compress' ] );
 
 	grunt.util.linefeed = '\n';
 };
