@@ -1,12 +1,12 @@
 # Importer for Gravity Forms and NationBuilder #
-**Contributors:**      dabernathy89
-**Donate link:**       https://www.paypal.me/DanielAbernathy
-**Tags:**              nationbuilder, gravity forms
-**Requires at least:** 4.4
-**Tested up to:**      4.4
-**Stable tag:**        0.2.2
-**License:**           GPLv2
-**License URI:**       http://www.gnu.org/licenses/gpl-2.0.html
+**Contributors:**      dabernathy89  
+**Donate link:**       https://www.paypal.me/DanielAbernathy  
+**Tags:**              nationbuilder, gravity forms  
+**Requires at least:** 4.4  
+**Tested up to:**      4.4  
+**Stable tag:**        0.2.2  
+**License:**           GPLv2  
+**License URI:**       http://www.gnu.org/licenses/gpl-2.0.html  
 
 Automatically import entries from Gravity Forms into NationBuilder.
 
