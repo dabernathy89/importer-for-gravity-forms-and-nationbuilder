@@ -176,14 +176,16 @@ class GF_NB_Importer {
 	 */
 	public function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
-		GFForms::include_feed_addon_framework();
+		if (class_exists('GFForms')) {
+			GFForms::include_feed_addon_framework();
 
-		$this->gravity_forms_main = new GFNBI_Gravity_Forms_Main( $this );
-		$this->nb_api = new GFNBI_Nb_Api( $this, $this->gravity_forms_main );
-		$this->gravity_forms_feed = new GFNBI_Gravity_Forms_Feed( $this, $this->gravity_forms_main, $this->nb_api );
+			$this->gravity_forms_main = new GFNBI_Gravity_Forms_Main( $this );
+			$this->nb_api = new GFNBI_Nb_Api( $this, $this->gravity_forms_main );
+			$this->gravity_forms_feed = new GFNBI_Gravity_Forms_Feed( $this, $this->gravity_forms_main, $this->nb_api );
 
-		GFAddOn::register( 'GFNBI_Gravity_Forms_Main' );
-		GFAddOn::register( 'GFNBI_Gravity_Forms_Feed' );
+			GFAddOn::register( 'GFNBI_Gravity_Forms_Main' );
+			GFAddOn::register( 'GFNBI_Gravity_Forms_Feed' );
+		}
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
