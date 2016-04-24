@@ -30,7 +30,8 @@ Follow these steps to get started:
 1. Navigate to a single form's settings page, and find the "NationBuilder" section. Create a feed if there are none.
 2. Give the feed a name - this can be something generic like "NationBuilder feed".
 3. Follow the instructions on the page for mapping the form fields to the NationBuilder custom fields.
-4. Optionally, set a condition for when this feed should run. For example, you can set it to only run when an opt-in checkbox on the form is checked.
+4. Add a comma separated list of tags which will be added to each person for this feed. You can include values from the form by clicking the small dropdown box next to the field.
+5. Optionally, set a condition for when this feed should run. For example, you can set it to only run when an opt-in checkbox on the form is checked. You can also use conditional logic and multiple feeds to control how tags are added to a person.
 
 Once the above steps are complete, your form(s) should be mapped to NationBuilder. To check if a form entry was successfully pushed to NationBuilder, check the "notes" section on the individual entry screen in the Gravity Forms admin area.
 
@@ -55,6 +56,9 @@ This plugin was built using the generator-plugin-wp tool built by WebDevStudios.
 3. Editing an individual feed for a form
 
 ## Changelog ##
+
+### 0.3.0 ###
+* New Feature - adding NationBuilder tags to people
 
 ### 0.2.2 ###
 * Bug fix - fatal error when Gravity Forms is not installed
