@@ -45,6 +45,24 @@ class GFNBI_Nb_Api {
 		return $this->make_request( 'people/push', 'PUT', $data );
 	}
 
+    /**
+     * Add tags to a person
+     *
+     * @since  NEXT
+     * @param  $person_id
+     * @param  $tags
+     * @return array|WP_Error
+     */
+    public function add_tags_to_person( $person_id, $tags ) {
+        $data = array(
+            'tagging' => array(
+                'tag' => $tags
+            )
+        );
+
+        return $this->make_request( "people/{$person_id}/taggings", 'PUT', $data );
+    }
+
 	/**
 	 * Make a request to NationBuilder
 	 *

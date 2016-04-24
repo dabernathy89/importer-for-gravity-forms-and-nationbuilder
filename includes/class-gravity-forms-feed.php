@@ -53,6 +53,8 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
     public function process_feed( $feed, $entry, $form ) {
         $nb_fields_raw = $this->get_dynamic_field_map_fields( $feed, 'nb_person_fields' );
         $nb_fields_formatted = array();
+        $tags = GFCommon::replace_variables($feed['meta']['nb_tags'], $form, $entry);
+        $tags = array_map( 'trim', explode( ',', $tags ) );
 
         // Loop through the custom fields and format them into a nested array that we'll send to NB.
         foreach ($nb_fields_raw as $key => $value) {
@@ -86,12 +88,46 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
             }
 
             $this->add_note( $entry['id'], $note, 'success' );
+            $this->add_tags_to_person( $response, $tags, $entry );
         } elseif ( is_wp_error( $response ) ) {
             $this->add_note_from_wp_error(
                 $response,
                 $entry['id'],
                 __( 'There was an error pushing this entry to NationBuilder:', 'gf-nb-importer' )
             );
+        }
+    }
+
+    /**
+     * Add tags to the person that was just created or updated
+     *
+     * @since  NEXT
+     * @param  $response
+     * @param  $tags
+     * @param  $entry
+     * @return void
+     */
+    protected function add_tags_to_person( $person_response, $tags, $entry ) {
+        if ( ! empty( $tags ) ) {
+            $person = json_decode( wp_remote_retrieve_body( $person_response ), true );
+            $person_id = $person['person']['id'];
+            $response = $this->nb_api->add_tags_to_person( $person_id, $tags );
+
+            if ( ! is_wp_error( $response ) ) {
+                $code = wp_remote_retrieve_response_code( $response );
+                if ( $code >= 200 && $code < 300 ) {
+                    $note = __( 'Successfully added tags to person:', 'gf-nb-importer') . PHP_EOL;
+                    $note .= implode( ', ', $tags );
+                }
+
+                $this->add_note( $entry['id'], $note, 'success' );
+            } elseif ( is_wp_error( $response ) ) {
+                $this->add_note_from_wp_error(
+                    $response,
+                    $entry['id'],
+                    __( 'There was an error adding the tags:', 'gf-nb-importer' )
+                );
+            }
         }
     }
 
