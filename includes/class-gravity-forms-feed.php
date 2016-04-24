@@ -145,6 +145,13 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
                         'exclude_field_types'   => 'creditcard'
                     ),
                     array(
+                        'name'                  => 'nb_tags',
+                        'label'                 => __( 'Tags (comma separated)', 'gf-nb-importer' ),
+                        'tooltip'               => __( 'You can use merge tags to insert values from the form.', 'gf-nb-importer' ),
+                        'type'                  => 'textarea',
+                        'class'                 => 'nb_tags large merge-tag-support'
+                    ),
+                    array(
                         'name'           => 'condition',
                         'label'          => esc_html__( 'Condition', 'gf-nb-importer' ),
                         'type'           => 'feed_condition',
@@ -193,6 +200,30 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
             site_url( 'wp-admin/admin.php?page=gf_settings&subview=gf_nb_importer' ),
             __('Please click here to complete the OAuth process before setting up a feed.', 'gf-nb-importer')
         );
+    }
+
+    /**
+     * Enqueue the stylesheet for the feed settings page
+     *
+     * @since  NEXT
+     * @return array
+     */
+    public function styles() {
+        $styles = array(
+            array(
+                'handle'  => 'gf_nb_feed_css',
+                'src'     => plugins_url( '../assets/css/feed_settings.css', __FILE__ ),
+                'version' => $this->_version,
+                'enqueue' => array(
+                    array(
+                        'admin_page' => array( 'form_settings' ),
+                        'tab'        => $this->_slug
+                    )
+                )
+            )
+        );
+
+        return array_merge( parent::styles(), $styles );
     }
 
 }
