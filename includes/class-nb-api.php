@@ -34,16 +34,25 @@ class GFNBI_Nb_Api {
 		$this->gf_main = $gf_main;
 	}
 
+    /**
+     * Create or update a person
+     *
+     * @since  0.2.0
+     * @param  $data
+     * @return array|WP_Error
+     */
 	public function push_person( $data ) {
 		return $this->make_request( 'people/push', 'PUT', $data );
 	}
 
 	/**
-	 * Make a request to NationBuilder and return
+	 * Make a request to NationBuilder
 	 *
 	 * @since  0.2.0
-	 * @param  object $plugin Main plugin object.
-	 * @return void
+	 * @param  $endpoint
+     * @param  $method
+     * @param  $data
+	 * @return array|WP_Error
 	 */
 	protected function make_request( $endpoint = '', $method = 'GET', $data = null ) {
 		$access_token = $this->gf_main->get_plugin_setting( 'oauth_access_token' );
