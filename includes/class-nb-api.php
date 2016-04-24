@@ -1,7 +1,7 @@
 <?php
 /**
  * Importer for Gravity Forms and NationBuilder Nb Api
- * @version 0.2.2
+ * @version 0.3.0
  * @package Importer for Gravity Forms and NationBuilder
  */
 
@@ -48,7 +48,7 @@ class GFNBI_Nb_Api {
     /**
      * Add tags to a person
      *
-     * @since  NEXT
+     * @since  0.3.0
      * @param  $person_id
      * @param  $tags
      * @return array|WP_Error

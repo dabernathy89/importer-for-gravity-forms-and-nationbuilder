@@ -1,7 +1,7 @@
 <?php
 /**
  * Importer for Gravity Forms and NationBuilder Gravity Forms Feed
- * @version 0.2.2
+ * @version 0.3.0
  * @package Importer for Gravity Forms and NationBuilder
  */
 
@@ -101,7 +101,7 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
     /**
      * Add tags to the person that was just created or updated
      *
-     * @since  NEXT
+     * @since  0.3.0
      * @param  $response
      * @param  $tags
      * @param  $entry
@@ -134,7 +134,7 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
     /**
      * Add a note to the entry from a WP_Error object
      *
-     * @since  NEXT
+     * @since  0.3.0
      * @param  $wp_error
      * @param  $entry_id
      * @param  $note
@@ -258,7 +258,7 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
     /**
      * Enqueue the stylesheet for the feed settings page
      *
-     * @since  NEXT
+     * @since  0.3.0
      * @return array
      */
     public function styles() {

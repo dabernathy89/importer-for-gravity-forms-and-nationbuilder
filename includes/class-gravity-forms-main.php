@@ -1,7 +1,7 @@
 <?php
 /**
  * Importer for Gravity Forms and NationBuilder Gravity Forms Main
- * @version 0.2.2
+ * @version 0.3.0
  * @package Importer for Gravity Forms and NationBuilder
  */
 
