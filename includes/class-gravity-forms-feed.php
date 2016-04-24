@@ -78,24 +78,41 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
         $response = $this->nb_api->push_person( array('person' => $nb_fields_formatted) );
 
         if ( ! is_wp_error( $response ) ) {
-            if ( wp_remote_retrieve_response_code( $response ) === 200 ) {
+            $code = wp_remote_retrieve_response_code( $response );
+            if ( $code === 200 ) {
                 $note = __( 'Successfully updated this entry in NationBuilder.', 'gf-nb-importer');
-            } elseif ( wp_remote_retrieve_response_code( $response ) === 201 ) {
+            } elseif ( $code === 201 ) {
                 $note = __( 'Successfully created this entry in NationBuilder.', 'gf-nb-importer');
             }
 
             $this->add_note( $entry['id'], $note, 'success' );
         } elseif ( is_wp_error( $response ) ) {
-            $error_code = $response->get_error_code();
-            $error_message = $response->get_error_message( $error_code );
-
-            $note = __( 'There was an error pushing this entry to NationBuilder: ', 'gf-nb-importer' );
-            $note .= PHP_EOL;
-            $note .= __( 'Error code: ', 'gf-nb-importer' ) . $error_code . PHP_EOL;
-            $note .= __( 'Error message: ', 'gf-nb-importer' ) . $error_message;
-
-            $this->add_note( $entry['id'], $note, 'error' );
+            $this->add_note_from_wp_error(
+                $response,
+                $entry['id'],
+                __( 'There was an error pushing this entry to NationBuilder:', 'gf-nb-importer' )
+            );
         }
+    }
+
+    /**
+     * Add a note to the entry from a WP_Error object
+     *
+     * @since  NEXT
+     * @param  $wp_error
+     * @param  $entry_id
+     * @param  $note
+     * @return void
+     */
+    protected function add_note_from_wp_error( $wp_error, $entry_id, $note = '' ) {
+        $error_code = $response->get_error_code();
+        $error_message = $response->get_error_message( $error_code );
+
+        $note = empty( $note ) ? '' : $note . PHP_EOL;
+        $note .= __( 'Error code: ', 'gf-nb-importer' ) . $error_code . PHP_EOL;
+        $note .= __( 'Error message: ', 'gf-nb-importer' ) . $error_message;
+
+        $this->add_note( $entry_id, $note, 'error' );
     }
 
     /**
