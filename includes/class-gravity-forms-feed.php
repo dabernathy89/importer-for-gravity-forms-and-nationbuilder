@@ -141,8 +141,8 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
      * @return void
      */
     protected function add_note_from_wp_error( $wp_error, $entry_id, $note = '' ) {
-        $error_code = $response->get_error_code();
-        $error_message = $response->get_error_message( $error_code );
+        $error_code = $wp_error->get_error_code();
+        $error_message = $wp_error->get_error_message( $error_code );
 
         $note = empty( $note ) ? '' : $note . PHP_EOL;
         $note .= __( 'Error code: ', 'gf-nb-importer' ) . $error_code . PHP_EOL;
