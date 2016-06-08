@@ -28,12 +28,19 @@ class GFNBI_Gravity_Forms_Main extends GFAddOn {
         $this->callback_nonce =  '?_wpnonce=' . wp_create_nonce( 'wp_rest' );
         self::$_instance = $this;
 
-        add_action( 'rest_api_init', function () {
-            register_rest_route( $this->_slug . '/v1/' , '/oauth_callback/', array(
-                'methods' => 'GET',
-                'callback' => array( $this, 'handle_oauth_callback' ),
-            ) );
-        } );
+        add_action( 'rest_api_init', array( $this, 'register_oauth_route' ) );
+    }
+
+    /**
+     * Register the REST API route for the oauth callback
+     *
+     * @return void
+     */
+    public function register_oauth_route() {
+        register_rest_route( $this->_slug . '/v1/' , '/oauth_callback/', array(
+            'methods' => 'GET',
+            'callback' => array( $this, 'handle_oauth_callback' ),
+        ) );
     }
 
     /**
