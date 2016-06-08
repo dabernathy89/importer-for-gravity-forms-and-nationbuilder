@@ -57,6 +57,9 @@ This plugin was built using the generator-plugin-wp tool built by WebDevStudios.
 
 ## Changelog ##
 
+### 0.3.2 ###
+* Bug fix - PHP 5.3 compatibility
+
 ### 0.3.1 ###
 * Bug fix - Fatal error was caused when NB API returned an error
 
