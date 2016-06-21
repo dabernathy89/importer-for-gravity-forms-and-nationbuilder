@@ -92,6 +92,7 @@ class GFNBI_Nb_Api {
                     'Authorization' => 'Bearer ' . $access_token,
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
+                    'User-Agent' => 'NB_Gravity'
                 ),
                 'body' => $data ? json_encode( $data ) : null
             )
