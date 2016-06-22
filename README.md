@@ -57,6 +57,9 @@ This plugin was built using the generator-plugin-wp tool built by WebDevStudios.
 
 ## Changelog ##
 
+### 0.3.3 ###
+* Bug fix - update to address new NationBuilder API security requirement
+
 ### 0.3.2 ###
 * Bug fix - PHP 5.3 compatibility
 
