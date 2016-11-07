@@ -3,7 +3,7 @@
 **Donate link:**       https://www.paypal.me/DanielAbernathy
 **Tags:**              nationbuilder, gravity forms
 **Requires at least:** 4.4
-**Tested up to:**      4.5.2
+**Tested up to:**      4.6.1
 **Stable tag:**        0.3.5
 **License:**           GPLv2
 **License URI:**       http://www.gnu.org/licenses/gpl-2.0.html
@@ -56,6 +56,15 @@ This plugin was built using the generator-plugin-wp tool built by WebDevStudios.
 3. Editing an individual feed for a form
 
 ## Changelog ##
+
+### 0.3.6 ###
+* documentation update
+
+### 0.3.5 ###
+* CSS fix - feed settings table overflow issue
+
+### 0.3.4 ###
+* Bug fix - don't attempt to pass empty tags to NB
 
 ### 0.3.3 ###
 * Bug fix - update to address new NationBuilder API security requirement
