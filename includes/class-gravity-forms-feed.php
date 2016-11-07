@@ -54,7 +54,7 @@ class GFNBI_Gravity_Forms_Feed extends GFFeedAddOn {
         $nb_fields_raw = $this->get_dynamic_field_map_fields( $feed, 'nb_person_fields' );
         $nb_fields_formatted = array();
         $tags = GFCommon::replace_variables($feed['meta']['nb_tags'], $form, $entry);
-        $tags = array_map( 'trim', explode( ',', $tags ) );
+        $tags = array_filter( array_map( 'trim', explode( ',', $tags ) ) );
 
         // Loop through the custom fields and format them into a nested array that we'll send to NB.
         foreach ($nb_fields_raw as $key => $value) {
