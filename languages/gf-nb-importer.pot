@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Importer for Gravity Forms and NationBuilder 0.3.4\n"
+"Project-Id-Version: Importer for Gravity Forms and NationBuilder 0.3.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/gf-nb-importer\n"
-"POT-Creation-Date: 2016-11-07 16:54:27+00:00\n"
+"POT-Creation-Date: 2016-11-07 17:05:32+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,6 +22,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:85
 #: release/0.3.3/includes/class-gravity-forms-feed.php:85
 #: release/0.3.4/includes/class-gravity-forms-feed.php:85
+#: release/0.3.5/includes/class-gravity-forms-feed.php:85
 #: release/svn/includes/class-gravity-forms-feed.php:85
 msgid "Successfully updated this entry in NationBuilder."
 msgstr ""
@@ -35,6 +36,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:87
 #: release/0.3.3/includes/class-gravity-forms-feed.php:87
 #: release/0.3.4/includes/class-gravity-forms-feed.php:87
+#: release/0.3.5/includes/class-gravity-forms-feed.php:87
 #: release/svn/includes/class-gravity-forms-feed.php:87
 msgid "Successfully created this entry in NationBuilder."
 msgstr ""
@@ -45,6 +47,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:96
 #: release/0.3.3/includes/class-gravity-forms-feed.php:96
 #: release/0.3.4/includes/class-gravity-forms-feed.php:96
+#: release/0.3.5/includes/class-gravity-forms-feed.php:96
 #: release/svn/includes/class-gravity-forms-feed.php:96
 msgid "There was an error pushing this entry to NationBuilder:"
 msgstr ""
@@ -55,6 +58,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:119
 #: release/0.3.3/includes/class-gravity-forms-feed.php:119
 #: release/0.3.4/includes/class-gravity-forms-feed.php:119
+#: release/0.3.5/includes/class-gravity-forms-feed.php:119
 #: release/svn/includes/class-gravity-forms-feed.php:119
 msgid "Successfully added tags to person:"
 msgstr ""
@@ -65,6 +69,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:128
 #: release/0.3.3/includes/class-gravity-forms-feed.php:128
 #: release/0.3.4/includes/class-gravity-forms-feed.php:128
+#: release/0.3.5/includes/class-gravity-forms-feed.php:128
 #: release/svn/includes/class-gravity-forms-feed.php:128
 msgid "There was an error adding the tags:"
 msgstr ""
@@ -78,6 +83,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:148
 #: release/0.3.3/includes/class-gravity-forms-feed.php:148
 #: release/0.3.4/includes/class-gravity-forms-feed.php:148
+#: release/0.3.5/includes/class-gravity-forms-feed.php:148
 #: release/svn/includes/class-gravity-forms-feed.php:148
 msgid "Error code: "
 msgstr ""
@@ -91,6 +97,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:149
 #: release/0.3.3/includes/class-gravity-forms-feed.php:149
 #: release/0.3.4/includes/class-gravity-forms-feed.php:149
+#: release/0.3.5/includes/class-gravity-forms-feed.php:149
 #: release/svn/includes/class-gravity-forms-feed.php:149
 msgid "Error message: "
 msgstr ""
@@ -104,6 +111,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:179
 #: release/0.3.3/includes/class-gravity-forms-feed.php:179
 #: release/0.3.4/includes/class-gravity-forms-feed.php:179
+#: release/0.3.5/includes/class-gravity-forms-feed.php:179
 #: release/svn/includes/class-gravity-forms-feed.php:179
 msgid "NationBuilder Feed Settings"
 msgstr ""
@@ -117,6 +125,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:182
 #: release/0.3.3/includes/class-gravity-forms-feed.php:182
 #: release/0.3.4/includes/class-gravity-forms-feed.php:182
+#: release/0.3.5/includes/class-gravity-forms-feed.php:182
 #: release/svn/includes/class-gravity-forms-feed.php:182
 msgid "Feed name"
 msgstr ""
@@ -130,6 +139,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:189
 #: release/0.3.3/includes/class-gravity-forms-feed.php:189
 #: release/0.3.4/includes/class-gravity-forms-feed.php:189
+#: release/0.3.5/includes/class-gravity-forms-feed.php:189
 #: release/svn/includes/class-gravity-forms-feed.php:189
 msgid "NationBuilder Person Fields"
 msgstr ""
@@ -143,6 +153,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:191
 #: release/0.3.3/includes/class-gravity-forms-feed.php:191
 #: release/0.3.4/includes/class-gravity-forms-feed.php:191
+#: release/0.3.5/includes/class-gravity-forms-feed.php:191
 #: release/svn/includes/class-gravity-forms-feed.php:191
 msgid ""
 "You can view the available custom field keys from the NationBuilder API "
@@ -156,6 +167,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:202
 #: release/0.3.3/includes/class-gravity-forms-feed.php:202
 #: release/0.3.4/includes/class-gravity-forms-feed.php:202
+#: release/0.3.5/includes/class-gravity-forms-feed.php:202
 #: release/svn/includes/class-gravity-forms-feed.php:202
 msgid "Tags (comma separated)"
 msgstr ""
@@ -166,6 +178,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:203
 #: release/0.3.3/includes/class-gravity-forms-feed.php:203
 #: release/0.3.4/includes/class-gravity-forms-feed.php:203
+#: release/0.3.5/includes/class-gravity-forms-feed.php:203
 #: release/svn/includes/class-gravity-forms-feed.php:203
 msgid "You can use merge tags to insert values from the form."
 msgstr ""
@@ -179,6 +192,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:209
 #: release/0.3.3/includes/class-gravity-forms-feed.php:209
 #: release/0.3.4/includes/class-gravity-forms-feed.php:209
+#: release/0.3.5/includes/class-gravity-forms-feed.php:209
 #: release/svn/includes/class-gravity-forms-feed.php:209
 msgid "Condition"
 msgstr ""
@@ -192,6 +206,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:211
 #: release/0.3.3/includes/class-gravity-forms-feed.php:211
 #: release/0.3.4/includes/class-gravity-forms-feed.php:211
+#: release/0.3.5/includes/class-gravity-forms-feed.php:211
 #: release/svn/includes/class-gravity-forms-feed.php:211
 msgid "Enable Condition"
 msgstr ""
@@ -205,6 +220,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:212
 #: release/0.3.3/includes/class-gravity-forms-feed.php:212
 #: release/0.3.4/includes/class-gravity-forms-feed.php:212
+#: release/0.3.5/includes/class-gravity-forms-feed.php:212
 #: release/svn/includes/class-gravity-forms-feed.php:212
 msgid "Process this simple feed if"
 msgstr ""
@@ -218,6 +234,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:226
 #: release/0.3.3/includes/class-gravity-forms-feed.php:226
 #: release/0.3.4/includes/class-gravity-forms-feed.php:226
+#: release/0.3.5/includes/class-gravity-forms-feed.php:226
 #: release/svn/includes/class-gravity-forms-feed.php:226
 msgid "Name"
 msgstr ""
@@ -231,6 +248,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-feed.php:254
 #: release/0.3.3/includes/class-gravity-forms-feed.php:254
 #: release/0.3.4/includes/class-gravity-forms-feed.php:254
+#: release/0.3.5/includes/class-gravity-forms-feed.php:254
 #: release/svn/includes/class-gravity-forms-feed.php:254
 msgid "Please click here to complete the OAuth process before setting up a feed."
 msgstr ""
@@ -244,6 +262,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:107
 #: release/0.3.3/includes/class-gravity-forms-main.php:107
 #: release/0.3.4/includes/class-gravity-forms-main.php:107
+#: release/0.3.5/includes/class-gravity-forms-main.php:107
 #: release/svn/includes/class-gravity-forms-main.php:107
 msgid ""
 "\n"
@@ -263,6 +282,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:112
 #: release/0.3.3/includes/class-gravity-forms-main.php:112
 #: release/0.3.4/includes/class-gravity-forms-main.php:112
+#: release/0.3.5/includes/class-gravity-forms-main.php:112
 #: release/svn/includes/class-gravity-forms-main.php:112
 msgid "The callback URL for your app is:"
 msgstr ""
@@ -276,6 +296,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:123
 #: release/0.3.3/includes/class-gravity-forms-main.php:123
 #: release/0.3.4/includes/class-gravity-forms-main.php:123
+#: release/0.3.5/includes/class-gravity-forms-main.php:123
 #: release/svn/includes/class-gravity-forms-main.php:123
 msgid "NationBuilder Importer Add-On Settings"
 msgstr ""
@@ -289,6 +310,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:132
 #: release/0.3.3/includes/class-gravity-forms-main.php:132
 #: release/0.3.4/includes/class-gravity-forms-main.php:132
+#: release/0.3.5/includes/class-gravity-forms-main.php:132
 #: release/svn/includes/class-gravity-forms-main.php:132
 msgid "Nation Slug"
 msgstr ""
@@ -302,6 +324,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:138
 #: release/0.3.3/includes/class-gravity-forms-main.php:138
 #: release/0.3.4/includes/class-gravity-forms-main.php:138
+#: release/0.3.5/includes/class-gravity-forms-main.php:138
 #: release/svn/includes/class-gravity-forms-main.php:138
 msgid "OAuth Client ID"
 msgstr ""
@@ -324,6 +347,8 @@ msgstr ""
 #: release/0.3.3/includes/class-gravity-forms-main.php:156
 #: release/0.3.4/includes/class-gravity-forms-main.php:144
 #: release/0.3.4/includes/class-gravity-forms-main.php:156
+#: release/0.3.5/includes/class-gravity-forms-main.php:144
+#: release/0.3.5/includes/class-gravity-forms-main.php:156
 #: release/svn/includes/class-gravity-forms-main.php:144
 #: release/svn/includes/class-gravity-forms-main.php:156
 msgid "OAuth Client Secret"
@@ -338,6 +363,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:150
 #: release/0.3.3/includes/class-gravity-forms-main.php:150
 #: release/0.3.4/includes/class-gravity-forms-main.php:150
+#: release/0.3.5/includes/class-gravity-forms-main.php:150
 #: release/svn/includes/class-gravity-forms-main.php:150
 msgid "OAuth Authorization Code"
 msgstr ""
@@ -351,6 +377,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:169
 #: release/0.3.3/includes/class-gravity-forms-main.php:169
 #: release/0.3.4/includes/class-gravity-forms-main.php:169
+#: release/0.3.5/includes/class-gravity-forms-main.php:169
 #: release/svn/includes/class-gravity-forms-main.php:169
 msgid "Click here to complete the OAuth process."
 msgstr ""
@@ -364,6 +391,7 @@ msgstr ""
 #: release/0.3.2/includes/class-gravity-forms-main.php:170
 #: release/0.3.3/includes/class-gravity-forms-main.php:170
 #: release/0.3.4/includes/class-gravity-forms-main.php:170
+#: release/0.3.5/includes/class-gravity-forms-main.php:170
 #: release/svn/includes/class-gravity-forms-main.php:170
 msgid ""
 "You already have an access token stored, but you may click here to generate "
@@ -378,6 +406,7 @@ msgstr ""
 #: release/0.3.2/includes/class-nb-api.php:80
 #: release/0.3.3/includes/class-nb-api.php:80
 #: release/0.3.4/includes/class-nb-api.php:80
+#: release/0.3.5/includes/class-nb-api.php:80
 #: release/svn/includes/class-nb-api.php:80
 msgid "No access token exists for the NationBuilder API."
 msgstr ""
@@ -390,6 +419,7 @@ msgstr ""
 #: release/0.3.2/includes/class-nb-api.php:84
 #: release/0.3.3/includes/class-nb-api.php:84
 #: release/0.3.4/includes/class-nb-api.php:84
+#: release/0.3.5/includes/class-nb-api.php:84
 #: release/svn/includes/class-nb-api.php:84
 msgid "No slug was defined for the nation."
 msgstr ""
@@ -402,6 +432,7 @@ msgstr ""
 #: release/0.3.2/includes/class-nb-api.php:108
 #: release/0.3.3/includes/class-nb-api.php:109
 #: release/0.3.4/includes/class-nb-api.php:109
+#: release/0.3.5/includes/class-nb-api.php:109
 #: release/svn/includes/class-nb-api.php:109
 msgid "An unknown error occurred when accessing the NationBuilder API."
 msgstr ""

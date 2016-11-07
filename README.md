@@ -4,7 +4,7 @@
 **Tags:**              nationbuilder, gravity forms
 **Requires at least:** 4.4
 **Tested up to:**      4.6.1
-**Stable tag:**        0.3.5
+**Stable tag:**        0.3.6
 **License:**           GPLv2
 **License URI:**       http://www.gnu.org/licenses/gpl-2.0.html
 
