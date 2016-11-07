@@ -1,7 +1,7 @@
 {
   "name": "gf-nb-importer",
   "title": "Importer for Gravity Forms and NationBuilder",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Automatically import entries from Gravity Forms into NationBuilder.",
   "author": {
     "name": "dabernathy89",
