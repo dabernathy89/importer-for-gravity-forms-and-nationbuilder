@@ -1,3 +1,9 @@
 .gaddon-setting.nb_tags {
     height: 70px;
 }
+
+.form-table.gforms_form_settings,
+.settings-field-map-table {
+    width: 100%;
+    table-layout: fixed;
+}
